@@ -10,6 +10,7 @@ repositories {
 dependencies {
     implementation(libs.kgp)
     implementation(libs.agp)
+    implementation(libs.javapoet)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
@@ -17,4 +18,3 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
-

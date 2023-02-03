@@ -13,6 +13,8 @@ sdk_target = "33"
 google_material = "1.7.0"
 
 androidx_core = "1.9.0"
+androidx_activity = "1.6.1"
+androidx_fragment = "1.5.5"
 androidx_lifecycle = "2.5.1"
 androidx_navigation = "2.5.3"
 androidx_activity_compose = "1.6.1"
@@ -40,7 +42,10 @@ kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kot
 google_material = { module = "com.google.android.material:material", version.ref = "google.material" }
 
 androidx_lifecycle_viewmodel_ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx.lifecycle" }
+androidx_lifecycle_runtime_ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx.lifecycle" }
+androidx_activity_ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx.activity" }
 androidx_core_ktx = { module = "androidx.core:core-ktx", version.ref = "androidx.core" }
+androidx_fragment_ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx.fragment" }
 androidx_navigation_fragment_ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx.navigation" }
 androidx_navigation_ui_ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx.navigation" }
 androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx.constraint.layout" }
@@ -67,7 +72,10 @@ dokka_gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref
 retrofit = [ "retrofit.core", "retrofit.jackson" ]
 androidx = [
     "androidx.lifecycle.viewmodel.ktx",
+    "androidx.lifecycle.runtime.ktx",
+    "androidx.activity.ktx",
     "androidx.core.ktx",
+    "androidx.fragment.ktx",
     "androidx.navigation.fragment.ktx",
     "androidx.navigation.ui.ktx",
     "androidx.constraint.layout"
