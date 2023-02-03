@@ -72,11 +72,13 @@ android {
 dependencies {
     implementation(libs.androidx.constraint.layout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel)
+
+    implementation(libs.timber)
+    implementation(libs.javapoet)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-
-    implementation(libs.timber)
 
     implementation(libs.coil)
     implementation(libs.lottie)
@@ -87,7 +89,8 @@ dependencies {
 }
 
 kapt {
-    useBuildCache = false
+    useBuildCache = true
+    correctErrorTypes = true
 }
 
 hilt {

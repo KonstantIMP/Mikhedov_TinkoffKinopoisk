@@ -13,12 +13,14 @@ sdk_target = "33"
 google_material = "1.7.0"
 
 androidx_core = "1.9.0"
+androidx_lifecycle = "2.5.1"
 androidx_activity_compose = "1.6.1"
 androidx_constraint_layout = "2.1.4"
 
 timber = "5.0.1"
 
 hilt = "2.44.2"
+javapoet = "1.13.0"
 
 retrofit = "2.9.0"
 
@@ -36,6 +38,7 @@ kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kot
 
 google_material = { module = "com.google.android.material:material", version.ref = "google.material" }
 
+androidx_lifecycle_viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx.lifecycle" }
 androidx_core_ktx = { module = "androidx.core:core-ktx", version.ref = "androidx.core" }
 androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx.constraint.layout" }
 
@@ -43,6 +46,8 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 hilt_android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+javapoet = { module = "com.squareup:javapoet", version.ref="javapoet" }
 
 retrofit_core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit_jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
