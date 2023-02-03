@@ -78,9 +78,12 @@ dependencies {
 
     implementation(libs.timber)
 
-    implementation(libs.bundles.retrofit)
+    implementation(libs.coil)
+    implementation(libs.lottie)
 
     implementation(libs.google.material)
+
+    implementation(libs.bundles.retrofit)
 }
 
 kapt {
