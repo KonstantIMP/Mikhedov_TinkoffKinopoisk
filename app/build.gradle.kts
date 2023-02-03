@@ -5,6 +5,7 @@ plugins {
     kotlin("kapt")
 
     alias(libs.plugins.hilt)
+    alias(libs.plugins.safeargs)
 }
 
 android {
@@ -49,30 +50,10 @@ android {
             )
         }
     }
-
-    lint {
-        warningsAsErrors = true
-        abortOnError = true
-    }
-
-    // Use this block to configure different flavors
-//    flavorDimensions("version")
-//    productFlavors {
-//        create("full") {
-//            dimension = "version"
-//            applicationIdSuffix = ".full"
-//        }
-//        create("demo") {
-//            dimension = "version"
-//            applicationIdSuffix = ".demo"
-//        }
-//    }
 }
 
 dependencies {
-    implementation(libs.androidx.constraint.layout)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.bundles.androidx)
 
     implementation(libs.timber)
     implementation(libs.javapoet)
