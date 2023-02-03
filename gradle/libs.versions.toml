@@ -26,6 +26,7 @@ hilt = "2.44.2"
 javapoet = "1.13.0"
 
 retrofit = "2.9.0"
+jackson = "2.14.2"
 
 coil = "2.2.2"
 lottie = "5.2.0"
@@ -58,7 +59,7 @@ hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hil
 javapoet = { module = "com.squareup:javapoet", version.ref="javapoet" }
 
 retrofit_core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit_jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
+retrofit_moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
@@ -69,7 +70,7 @@ dokka_core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "dokka" 
 dokka_gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 
 [bundles]
-retrofit = [ "retrofit.core", "retrofit.jackson" ]
+retrofit = [ "retrofit.core", "retrofit.moshi" ]
 androidx = [
     "androidx.lifecycle.viewmodel.ktx",
     "androidx.lifecycle.runtime.ktx",
