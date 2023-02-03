@@ -78,6 +78,8 @@ dependencies {
 
     implementation(libs.timber)
 
+    implementation(libs.bundles.retrofit)
+
     implementation(libs.google.material)
 }
 

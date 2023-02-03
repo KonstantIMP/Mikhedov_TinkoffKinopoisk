@@ -20,6 +20,8 @@ timber = "5.0.1"
 
 hilt = "2.44.2"
 
+retrofit = "2.9.0"
+
 detekt = "1.22.0"
 dokka = "1.7.20"
 benmanes = "0.44.0"
@@ -39,13 +41,16 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 hilt_android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 
+retrofit_core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit_jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
+
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
 dokka_core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "dokka" }
 dokka_gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
 
 [bundles]
-
+retrofit = [ "retrofit.core", "retrofit.jackson" ]
 
 [plugins]
 
