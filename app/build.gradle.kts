@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
+
     kotlin("android")
+    kotlin("kapt")
+
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -69,8 +73,18 @@ dependencies {
     implementation(libs.androidx.constraint.layout)
     implementation(libs.androidx.core.ktx)
 
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
     implementation(libs.timber)
 
     implementation(libs.google.material)
 }
 
+kapt {
+    useBuildCache = false
+}
+
+hilt {
+    enableAggregatingTask = true
+}

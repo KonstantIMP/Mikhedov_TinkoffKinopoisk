@@ -18,6 +18,8 @@ androidx_constraint_layout = "2.1.4"
 
 timber = "5.0.1"
 
+hilt = "2.44.2"
+
 detekt = "1.22.0"
 dokka = "1.7.20"
 benmanes = "0.44.0"
@@ -34,6 +36,9 @@ androidx_constraint_layout = { module = "androidx.constraintlayout:constraintlay
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
+hilt_android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
 dokka_core = { module = "org.jetbrains.dokka:dokka-core", version.ref = "dokka" }
@@ -43,6 +48,9 @@ dokka_gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref
 
 
 [plugins]
+
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint.gradle" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "benmanes" }
