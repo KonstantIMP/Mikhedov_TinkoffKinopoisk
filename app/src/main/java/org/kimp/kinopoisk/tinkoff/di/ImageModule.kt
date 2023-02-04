@@ -22,6 +22,7 @@ object ImageModule {
     ) = ImageLoader.Builder(context)
         .memoryCache(memoryCache)
         .diskCache(diskCache)
+        .crossfade(true)
         .build()
 
 

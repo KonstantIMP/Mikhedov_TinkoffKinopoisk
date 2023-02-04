@@ -73,6 +73,7 @@ dependencies {
 
     implementation(libs.google.material)
 
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.retrofit)
 }
 

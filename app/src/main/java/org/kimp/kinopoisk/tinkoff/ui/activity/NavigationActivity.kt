@@ -15,8 +15,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class NavigationActivity: AppCompatActivity() {
-    @Inject lateinit var kinopoiskApi: KinopoiskApi
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,17 +22,5 @@ class NavigationActivity: AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        kinopoiskApi.getTopFilms(1, KinopoiskTopFilmsRequestType.TOP_100_POPULAR_FILMS)
-            .enqueue(object: Callback<TopFilmsDto> {
-                override fun onResponse(call: Call<TopFilmsDto>, response: Response<TopFilmsDto>) {
-                    Timber.i("Recieved %d films", response.body()!!.films.size)
-                }
-
-                override fun onFailure(call: Call<TopFilmsDto>, t: Throwable) {
-                    Timber.e(t)
-                }
-
-            })
     }
 }

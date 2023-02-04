@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/film_card_height"
     app:cardCornerRadius="@dimen/film_card_corner_radius"
+    android:clickable="true"
+    android:longClickable="true"
+    app:cardElevation="6dp"
+    android:layout_marginStart="@dimen/films_fragment_content_left_and_right_margins"
+    android:layout_marginEnd="@dimen/films_fragment_content_left_and_right_margins"
     style="@style/Widget.Material3.CardView.Elevated"
     app:cardBackgroundColor="?attr/colorOnPrimary">
 
