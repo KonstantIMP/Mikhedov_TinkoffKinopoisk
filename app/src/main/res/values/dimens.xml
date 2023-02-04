@@ -10,4 +10,11 @@
     <dimen name="film_card_space_between_title_and_subtitle_size">8dp</dimen>
     <dimen name="film_card_title_font_size">16sp</dimen>
     <dimen name="film_card_subtitle_font_size">14sp</dimen>
+
+    <dimen name="films_fragment_half_space_between_favorite_and_popular_btns">7dp</dimen>
+    <dimen name="films_fragment_content_left_and_right_margins">16dp</dimen>
+    <dimen name="films_fragment_content_top_and_bottom_margins">4dp</dimen>
+    <dimen name="films_fragment_toolbar_title_text_size">25sp</dimen>
+
+    <dimen name="app_bar_height">54dp</dimen>
 </resources>

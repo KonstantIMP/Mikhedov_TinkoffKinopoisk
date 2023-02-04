@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tinkoff Kinopoisk</string>
+    <string name="films_fragment_popular_btn_text">Popular</string>
+    <string name="films_fragment_favorite_btn_text">Favorite</string>
 </resources>

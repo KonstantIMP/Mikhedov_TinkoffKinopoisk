@@ -4,4 +4,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/film_card_poster_corner_radius</item>
     </style>
+
+    <style name="TextAppearance.App.ToolbarTitle" parent="">
+        <item name="android:textSize">@dimen/films_fragment_toolbar_title_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
