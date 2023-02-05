@@ -22,7 +22,7 @@ class FilmsFragmentViewModel @Inject constructor(
     private val currentMode: MutableLiveData<FilmsFragmentMode> = MutableLiveData(FilmsFragmentMode.ShowPopularFilms)
     private val hasErrors: MutableLiveData<Boolean> = MutableLiveData(false)
 
-    private val films: MutableLiveData<List<FilmDto>> = MutableLiveData()
+    private val films: MutableLiveData<List<FilmDto>> = MutableLiveData(listOf())
 
     fun loadFilms() {
         viewModelScope.launch {

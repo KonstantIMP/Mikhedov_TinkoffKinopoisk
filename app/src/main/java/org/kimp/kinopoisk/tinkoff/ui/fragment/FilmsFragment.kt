@@ -13,12 +13,14 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import org.kimp.kinopoisk.tinkoff.R
 import org.kimp.kinopoisk.tinkoff.data.FilmsFragmentMode
 import org.kimp.kinopoisk.tinkoff.data.adapter.FilmSelectedListener
 import org.kimp.kinopoisk.tinkoff.data.adapter.FilmsAdapter
 import org.kimp.kinopoisk.tinkoff.data.model.AboutFragmentViewModel
+import org.kimp.kinopoisk.tinkoff.data.model.FavoriteViewModel
 import org.kimp.kinopoisk.tinkoff.data.model.FilmsFragmentViewModel
 import org.kimp.kinopoisk.tinkoff.data.remote.dto.FilmDto
 import org.kimp.kinopoisk.tinkoff.databinding.FragmentFilmsBinding
@@ -30,6 +32,7 @@ class FilmsFragment: Fragment(), FilmSelectedListener, SearchView.OnQueryTextLis
     @Inject lateinit var adapter: FilmsAdapter
 
     private val aboutModel: AboutFragmentViewModel by activityViewModels()
+    private val faforitesModel: FavoriteViewModel by viewModels()
     private val viewModel: FilmsFragmentViewModel by viewModels()
 
     private lateinit var binding: FragmentFilmsBinding
@@ -59,8 +62,11 @@ class FilmsFragment: Fragment(), FilmSelectedListener, SearchView.OnQueryTextLis
         binding.filmsRecyclerView.adapter = adapter
 
         binding.retryBtn.setOnClickListener { viewModel.loadFilms() }
-        viewModel.loadFilms()
+        if (faforitesModel.films().value!!.isEmpty()) faforitesModel.loadFilms()
+        if (viewModel.films().value!!.isEmpty()) viewModel.loadFilms()
 
+        adapter.films = viewModel.films().value!!
+        adapter.manager = faforitesModel
         adapter.listener = this
 
         viewModel.films().observe(viewLifecycleOwner) {filmsList ->
@@ -97,7 +103,7 @@ class FilmsFragment: Fragment(), FilmSelectedListener, SearchView.OnQueryTextLis
             }
         }
 
-        if (found.isEmpty()) Toast.makeText(requireContext(), "Unable to find smth", Toast.LENGTH_LONG).show()
+        if (found.isEmpty()) Snackbar.make(requireContext(), binding.root, getString(R.string.not_found_snack), Snackbar.LENGTH_LONG).show()
         else {
             adapter.films = found
             adapter.notifyDataSetChanged()

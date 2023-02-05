@@ -1,6 +1,7 @@
 package org.kimp.kinopoisk.tinkoff.data.remote.dto
 
 data class FilmDto(
+    val kinopoiskId: Int,
     val nameRu: String,
     val posterUrl: String,
     val posterUrlPreview: String,

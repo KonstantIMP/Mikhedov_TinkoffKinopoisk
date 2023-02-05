@@ -73,6 +73,9 @@ dependencies {
 
     implementation(libs.google.material)
 
+    implementation(libs.bundles.room)
+    kapt(libs.room.compiler)
+
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.retrofit)
 }

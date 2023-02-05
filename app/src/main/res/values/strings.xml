@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Tinkoff Kinopoisk</string>
     <string name="empty" />
-    <string name="films_fragment_popular_btn_text">Popular</string>
-    <string name="films_fragment_favorite_btn_text">Favorite</string>
-    <string name="films_fragment_network_error_msg">An error occurred while loading data,\ncheck the network connection</string>
-    <string name="films_fragment_retry_btn">Try again</string>
-    <string name="about_fragment_countries_msg">Countries: </string>
-    <string name="about_fragment_genres_msg">Genres: </string>
+    <string name="films_fragment_popular_btn_text">Популярное</string>
+    <string name="films_fragment_favorite_btn_text">Избранное</string>
+    <string name="films_fragment_network_error_msg">Во время загрузки произошла ошибка,\nпроверьте соединение с сетью</string>
+    <string name="films_fragment_retry_btn">Еще раз</string>
+    <string name="about_fragment_countries_msg">Страны: </string>
+    <string name="about_fragment_genres_msg">Жанры: </string>
+    <string name="not_found_snack">Ничего не нашлось</string>
+    <string name="view_loading_hint">Подсказка\n\n Зажмите карточку с понравившимся фильмом,\nи на нем появится звездочка!</string>
 </resources>

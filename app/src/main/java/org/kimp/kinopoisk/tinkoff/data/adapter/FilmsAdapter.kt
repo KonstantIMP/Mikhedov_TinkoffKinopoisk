@@ -23,6 +23,7 @@ import kotlin.math.max
 class FilmsAdapter @Inject constructor(
     val imageLoader: ImageLoader,
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var manager: FavoriteManager? = null
     var listener: FilmSelectedListener? = null
     var films: List<FilmDto> = listOf()
 
@@ -80,7 +81,6 @@ class FilmsAdapter @Inject constructor(
                 Locale.getDefault()
             ) else it.toString()
         }} ${films[position].year})"
-        filmHolder.favoriteIndicator.visibility = View.GONE
 
         ImageRequest.Builder(filmHolder.itemView.context)
             .data(films[position].posterUrlPreview)
@@ -114,6 +114,19 @@ class FilmsAdapter @Inject constructor(
         filmHolder.itemView.setOnClickListener {
             Timber.i("Clicked ${position} - ${films[position].nameRu}")
             listener?.filmSelected(films[position])
+        }
+        filmHolder.itemView.setOnLongClickListener {
+            manager?.apply {
+                filmHolder.favoriteIndicator.visibility = if(this.isFavorite(films[position].kinopoiskId))
+                    View.GONE else View.VISIBLE
+                this.toggleFavorite(films[position])
+            }
+            return@setOnLongClickListener true
+        }
+
+        manager?.apply {
+            filmHolder.favoriteIndicator.visibility = if(!this.isFavorite(films[position].kinopoiskId))
+                View.GONE else View.VISIBLE
         }
     }
 
